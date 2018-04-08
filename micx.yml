@@ -1,0 +1,37 @@
+
+(include): somefile.yml
+
+
+languages:
+  de_de: de
+  en_us: en
+  en_gb: en
+
+
+search_index:
+  - "index.{lang}.de"
+  - "index.en.de"
+
+env:
+  - lang: "pcre:value:^/(<value>[a-z]{2,2})"
+
+
+routes:
+  - name: "@home"
+    file: /home/index.{lang}.html
+    routes:
+      - intl: /
+
+  - name: "@preise_leistungen"
+    file: /preise/
+    routes:
+      - de: /preise-und-leistungen
+      - en: /pricing
+
+  -
+
+features:
+  - name: esi-template
+    activate:
+      file-match:
+        - "*.html"

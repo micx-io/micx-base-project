@@ -1,0 +1,12 @@
+- alias: @home
+  template: /www/index
+  route: /
+  i18n:
+    de: /
+
+
+- alias: @preise
+  template: /www/preise/
+  routes:
+    de: /preise-und-leistungen
+    en: /pricing

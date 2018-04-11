@@ -1,12 +1,4 @@
-
-(include): somefile.yml
-
-
-languages:
-  de_de: de
-  en_us: en
-  en_gb: en
-
+micx-version: 1
 
 search_index:
   - "index.{lang}.de"
@@ -16,22 +8,29 @@ env:
   - lang: "pcre:value:^/(<value>[a-z]{2,2})"
 
 
-routes:
-  - name: "@home"
-    file: /home/index.{lang}.html
-    routes:
-      - intl: /
+acl:
+  - route: /
+    allow: "@all"
+  - route: /cv
+    allow: "@arbeitgeber"
 
-  - name: "@preise_leistungen"
-    file: /preise/
-    routes:
-      - de: /preise-und-leistungen
-      - en: /pricing
 
-  -
+modules:
+  i18n:
+    languages:
+      de_de: de
+      en_us: en
+      en_gb: en
 
-features:
-  - name: esi-template
-    activate:
-      file-match:
-        - "*.html"
+  auth-file:
+    config: micx-auth.yml
+
+  imageurl:
+    - preset: small
+      crop: 400x400
+    - preset: gallery
+      resize: 400x400
+
+  autoroute:
+    paths:
+      - /www/blog

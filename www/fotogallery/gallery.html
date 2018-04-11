@@ -1,0 +1,17 @@
+<micx:extends page="default">
+    <micx:var name="images" expr="search_files(dir='/www/fotogallery' recursive=false pattern='*.jpg')" />
+
+    <div micx:foreach="names as curName">
+        <img src=""
+
+    </div>
+    <micx:foreach expr="names as curName">
+        <div>
+            <img src="{{ curName | imageurl:small }}?"/>
+            <img src="someImage_small.jpg"/>
+
+        </div>
+    </micx:foreach>
+
+
+</micx:extends>

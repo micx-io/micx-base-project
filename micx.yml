@@ -16,6 +16,8 @@ acl:
 
 
 modules:
+  acl:
+
   i18n:
     languages:
       de_de: de

@@ -16,6 +16,11 @@ class App
     }
 
 
+    public function setResponseBuilder ()
+    {
+
+    }
+
     public function handle (Request $request) : Response
     {
 

@@ -1,4 +1,6 @@
-- userid: siemens
-  passwd: w094jojwojr
-  roles:
-    - @bewerber
+wurst:
+  - userid: siemens
+    passwd: w094jojwojr
+    roles:
+       - @bewerber
+       
